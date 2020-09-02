@@ -1,20 +1,39 @@
 import React from 'react'
 
 import './card.css'
-const Card = () => {
+import CardItem from '../cardItem/CardItem'
+
+const renderCards = (props) => {
+  let { nodes } = props
+  if (props && props.cards) {
+    if (nodes && nodes.length % 2 === 1) {
+      nodes = nodes.slice(0, nodes.length)
+    }
+  } else {
+    if (nodes && nodes.length % 3 === 1) {
+      nodes = nodes.slice(0, nodes.length - 1)
+    }
+  }
+  return nodes.map((item, i) => (
+    <div
+      key={i}
+      className={`w-full sm:w-1/2 xl:w-1/${
+        props.cards ? props.cards : 3
+      } px-3 xl:px-6 py-5 card-box `}
+    >
+      <CardItem {...item} cardLength={props.cards} index={i} />
+    </div>
+  ))
+}
+const Card = (props) => {
+  const { nodes } = props
+  if (nodes === undefined) {
+    return <div>Loading..</div>
+  }
+
   return (
-    <div class='cardContainer card'>
-      <img
-        src='http://weaver-ai-templates.s3-website.eu-west-2.amazonaws.com/static/2b42cecd35aab3e20e5605c1d09d3e21/0b533/448ca0e9-fc2a-4782-9b2a-896e7b9da742.png'
-        class='card-img-top'
-      />
-      <div class='card-body'>
-        <h5 class='card-title'>Keep Salads Crisp! Avoid wilting</h5>
-        <p class='card-text'>
-          A convenient space for all your fresh vegetables and fruits with its
-          own designated space.
-        </p>
-      </div>
+    <div className='pt-6 overflow-hidden addBorder'>
+      <div className='flex flex-wrap -mx-1 xl:-mx-6'>{renderCards(props)}</div>
     </div>
   )
 }
