@@ -1,6 +1,7 @@
 import React from 'react'
 
-import '../node_modules/normalize.css'
+import { ExampleComponent, CardComponent } from 'template'
+import 'normalize.css'
 import 'template/example/node_modules/bootstrap/dist/css/bootstrap.min.css'
 import 'template/dist/index.css'
 
