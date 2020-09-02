@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save template
+npm install --save templateweaver
 ```
 
 ## Usage
