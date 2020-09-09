@@ -1,0 +1,75 @@
+.measurement-section{
+  margin: 5% 0;
+}
+
+.measurement-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  margin-top: 2%; 
+}
+
+.first { 
+  padding: 20px;
+  flex: 1; 
+}
+  
+.second { 
+  flex: 1;  
+}
+     
+  .order2{
+      order:2;
+  }
+  
+  .order1{
+      order:1; 
+  }
+  .spechead{
+    font-size: 1em;
+    color:#ccc;
+    font-weight: 500;
+  }
+  .seperator{
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 5px;
+
+  }
+  .key{
+    color:#000;
+  }
+
+  /* .measurement-container  td{ 
+    line-height: 30pt;
+  } */
+
+  .product-image-right { 
+    width:15vw;
+    float: right;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 736px) {
+    .measurement-container { 
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+    }
+
+    .measurement-container:nth-child(1){
+      flex-direction: column-reverse;
+    }
+
+    .product-image-right { 
+      float: right;
+      margin: 0 auto;
+    }
+
+    .product-image-left {
+       
+      float: left;
+      margin: 0 auto;
+    }
+  }
